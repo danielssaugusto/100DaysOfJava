@@ -1,4 +1,4 @@
-package org.example.J1_fundamentos;
+package org.example.J1_fundamentos.Fase01_FundamentosSolidos;
 
 import java.util.Scanner;
 
