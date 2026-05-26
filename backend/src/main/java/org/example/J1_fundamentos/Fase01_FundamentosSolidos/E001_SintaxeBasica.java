@@ -2,7 +2,7 @@ package org.example.J1_fundamentos.Fase01_FundamentosSolidos;
 
 import java.util.Scanner;
 
-public class E001_SintaxeBásica {
+public class E001_SintaxeBasica {
     public static void main(String[] args) {
 
         /* SUMÁRIO:
@@ -15,7 +15,6 @@ public class E001_SintaxeBásica {
         * 7. Loops
         * 8. Arrays
         */
-
 
         // 1. VARIÁVEIS E TIPOS PRIMITIVOS
         // Em java há 8 tipos primitivos de dados.

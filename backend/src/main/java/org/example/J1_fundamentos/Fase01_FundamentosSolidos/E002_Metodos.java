@@ -86,7 +86,7 @@ public class E002_Metodos {
     // Você precisa usar o comando new para criar um objeto antes de usar o método.
     // Para usar o método da String, precisamos de uma instância
     String texto = new String("olá");
-    texto.toUpperCase();
+    // texto.toUpperCase();
 
     // Com static (Classe):
     // Você não precisa criar um objeto com new. Você chama o método diretamente pelo nome da Classe.
