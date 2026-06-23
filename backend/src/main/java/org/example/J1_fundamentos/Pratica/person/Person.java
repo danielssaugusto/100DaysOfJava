@@ -7,15 +7,23 @@ public class Person {
     private int personAge;
     private double personWeight;
 
+    public Person(String name, int age, double weight) {
+        setPersonName(name);
+        setPersonAge(age);
+        setPersonWeight(weight);
+    }
+
+    public Person(String name) {
+        setPersonName(name);
+    }
+
     // Criando um método para saudação ao sistema
     // Um método possui o modificador de acesso, o tipo de retorno, o nome do método e os parâmetros.
-    public String greetingPerson(String name, double weight, int age) {
-        this.setPersonName(name);
-        this.setPersonAge(age);
-        this.setPersonWeight(weight);
-        String message = "Olá, " + getPersonName() + "! Seja bem-vindo ao sistema. Você tem " + getPersonAge() + " anos de idade e pesa " + getPersonWeight() + "Kg.";
-
-        return message;
+    public String greetingPerson() {
+        return "Olá, " + getPersonName() +
+                "! Seja bem-vindo ao sistema. Você tem " +
+                getPersonAge() + " anos de idade e pesa " +
+                getPersonWeight() + "Kg.";
     }
 
     public String getPersonName() {
@@ -39,6 +47,9 @@ public class Person {
     }
 
     public void setPersonAge(int personAge) {
+        if (personAge <= 0) {
+            throw new IllegalArgumentException("Idade inválida!");
+        }
         this.personAge = personAge;
     }
 }

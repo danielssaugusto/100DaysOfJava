@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class PersonTest {
     public static void main(String[] args) {
-        Person human = new Person();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Your name: ");
@@ -19,8 +18,11 @@ public class PersonTest {
         double weight = sc.nextDouble();
         sc.nextLine();
 
-        sc.close();
-
-        System.out.println(human.greetingPerson(name, weight, age));;
+        try {
+            Person human = new Person(name, age, weight);
+            System.out.println(human.greetingPerson());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
