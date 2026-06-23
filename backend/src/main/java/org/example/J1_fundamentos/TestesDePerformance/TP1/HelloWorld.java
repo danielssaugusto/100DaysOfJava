@@ -1,42 +1,47 @@
 package org.example.J1_fundamentos.TestesDePerformance.TP1;
 
-/* Teste de Performance 1
-* Exercício 01: Instalar o JDK
-* Link: https://www.oracle.com/java/technologies/downloads/
-* Verificar a instalação no terminal: java -version
-*
-* Exercício 02: Instalar e Configurar a IDE IntelliJ IDEA
-* Link: https://www.jetbrains.com/idea/
- */
-
 import java.util.Scanner;
 
-// Exercício 03: criar uma classe chamada "HelloWorld.java" com um método main
+/**
+ * TESTE DE PERFORMANCE 1 (TP1)
+ * * Exercício 01: Instalar o JDK (java -version)
+ * Exercício 02: Instalar e Configurar a IDE IntelliJ IDEA
+ * Exercício 05: Build do Projeto (Ctrl + F9)
+ * Exercício 06: Rodar a Aplicação (Run 'HelloWorld.main()')
+ * Exercício 10: Depurar Código (Uso de Breakpoints, Step Over/Into)
+ */
+
+// Exercício 03: Criar a classe HelloWorld com o método main
 class HelloWorld {
+
     public static void main(String[] args) {
-        // Exercício 09: Ler entrada do usuário
+        // Exercício 09: Inicializando o Scanner para leitura de dados
         Scanner scanner = new Scanner(System.in);
 
-        // Execício 07: Modificar para exibir diferentes mensagens
-        // Exercício 08: usar variáveis e diferentes tipos de dados
-        System.out.println("Name: ");
+        // Exercício 04: Programa simples inicial
+        System.out.println("Hello, World!");
+        System.out.println("-----------------------------------");
+
+        // Exercício 07 & 09: Solicitando e lendo dados do usuário
+        System.out.print("Digite o seu nome: ");
         String name = scanner.nextLine();
 
-        System.out.println("Idade: ");
+        System.out.print("Digite a sua idade: ");
         int idade = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Limpeza de buffer do teclado
 
+        // Exercício 08: Declaração de variáveis com diferentes tipos de dados
         String data = "23/06/2026";
         double peso = 76.5;
 
-        // Exercício 04: criando um programa simples
-        System.out.println("Hello, World!");
+        // Exibição dos resultados formatados
+        System.out.println("\n--- Informações Registradas ---");
+        System.out.println("Nome: " + name);
+        System.out.println("Idade: " + idade + " anos");
+        System.out.println("Data: " + data);
+        System.out.println("Peso: " + peso + " kg");
 
-        System.out.println("Name: " + name + " Idade: " + idade + " Data: " + data + " Peso: " + peso);
+        // Fechamento do scanner (boa prática)
+        scanner.close();
     }
-
-    // Exercício 05:
-    // Agora deve ser criado o build selecionando "Build Project" ou pressionando "Ctrl + F9" para compilar o projeto.
-    // Exercício 06:
-    // Após isso selecione "Run 'HelloWorld.main()'"
 }
