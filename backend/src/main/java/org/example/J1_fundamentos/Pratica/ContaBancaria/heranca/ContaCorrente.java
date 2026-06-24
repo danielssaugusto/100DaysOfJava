@@ -17,7 +17,7 @@ public class ContaCorrente extends ContaBancaria {
         if (valorTotal > 0 && valorTotal <= getSaldo()) {
             super.sacar(valor);
             super.sacar(taxaOperacao);
-            System.out.println("Taxa de Operação de R$" + taxaOperacao + "foi aplicada.");
+            System.out.println("Taxa de Operação de R$" + taxaOperacao + " foi aplicada.");
         } else {
             System.out.println("Saldo insuficiente ou valor inválido para a conta corrente.");
         }
