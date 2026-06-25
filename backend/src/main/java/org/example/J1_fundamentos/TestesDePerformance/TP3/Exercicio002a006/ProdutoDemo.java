@@ -9,5 +9,6 @@ public class ProdutoDemo {
         pd.displayInformation();
         pd.increaseQuantity(12);
         pd.displayInformation();
+        pd.decrementQuantity(5);
     }
 }

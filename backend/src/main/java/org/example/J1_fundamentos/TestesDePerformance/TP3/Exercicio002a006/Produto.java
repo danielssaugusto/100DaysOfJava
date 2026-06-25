@@ -30,6 +30,11 @@ public class Produto {
         setQuantityInStock(increase);
     }
 
+    public void decrementQuantity(int decrementValue) {
+        int decrement = getQuantityInStock() - decrementValue;
+        setQuantityInStock(decrement);
+    }
+
     public void displayInformation() {
         System.out.println("=== ESTOQUE ===");
         System.out.println("Nome do produto: " + getName() + "\nPreço: R$" + getPrice() + "\nQuantidade em estoque: " + getQuantityInStock());
@@ -64,10 +69,6 @@ public class Produto {
     }
 
     public void setQuantityInStock(int quantityInStock) {
-        if (quantityInStock >= 0) {
-            this.quantityInStock = quantityInStock;
-        } else {
-            System.out.println("O estoque não pode ficar negativo.");
-        }
+        this.quantityInStock = quantityInStock;
     }
 }
