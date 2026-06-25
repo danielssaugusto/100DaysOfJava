@@ -5,10 +5,10 @@ public class Produto {
     private double price;
     private int quantityInStock;
 
-    Produto(String name, double price, int quantityInStock) {
-        this.name = name;
-        this.price = price;
-        this.quantityInStock = quantityInStock;
+    public Produto(String name, double price, int quantityInStock) {
+        setName(name);
+        setPrice(price);
+        setQuantityInStock(quantityInStock);
     }
 
     public void changePrice(double newPrice) {
@@ -25,6 +25,11 @@ public class Produto {
         setQuantityInStock(newQuantity);
     }
 
+    public void increaseQuantity(int increaseValue) {
+        int increase = getQuantityInStock() + increaseValue;
+        setQuantityInStock(increase);
+    }
+
     public void displayInformation() {
         System.out.println("=== ESTOQUE ===");
         System.out.println("Nome do produto: " + getName() + "\nPreço: R$" + getPrice() + "\nQuantidade em estoque: " + getQuantityInStock());
@@ -35,7 +40,11 @@ public class Produto {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null) {
+            this.name = name;
+        } else {
+            System.out.println("Nome não informado.");
+        }
     }
 
     public double getPrice() {
@@ -55,7 +64,7 @@ public class Produto {
     }
 
     public void setQuantityInStock(int quantityInStock) {
-        if (quantityInStock > 0) {
+        if (quantityInStock >= 0) {
             this.quantityInStock = quantityInStock;
         } else {
             System.out.println("O estoque não pode ficar negativo.");
