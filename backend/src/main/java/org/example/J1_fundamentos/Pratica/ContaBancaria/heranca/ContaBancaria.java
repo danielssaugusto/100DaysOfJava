@@ -1,6 +1,6 @@
 package org.example.J1_fundamentos.Pratica.ContaBancaria.heranca;
 
-public class ContaBancaria {
+public abstract class ContaBancaria {
     private String titular;
     private double saldo;
 
