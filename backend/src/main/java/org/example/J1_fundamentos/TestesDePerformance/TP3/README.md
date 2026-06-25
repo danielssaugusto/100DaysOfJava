@@ -70,5 +70,5 @@ Caso os arquivos estejam separados por contexto, você pode compilá-los e execu
 
 ### Contexto do Supermercado (Produto)
 ```bash
-javac Produto.java AppProduto.java
-java AppProduto
+javac Produto.java ProdutoDemo.java
+java ProdutoDemo
