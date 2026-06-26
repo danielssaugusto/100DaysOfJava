@@ -12,6 +12,5 @@ public class BancoDemo {
         cp.exibirInformacoes();
         cp.aplicarRendimento();
         cp.exibirInformacoes();
-
     }
 }
