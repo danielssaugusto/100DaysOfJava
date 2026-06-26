@@ -27,6 +27,10 @@ public abstract class ContaBancaria {
         }
     }
 
+    protected void ajustarSaldo(double novoSaldo) {
+        this.saldo = novoSaldo;
+    }
+
     public String getTitular() {
         return titular;
     }
