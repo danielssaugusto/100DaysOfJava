@@ -28,4 +28,8 @@ public class ContaCorrente extends ContaBancaria {
         super.exibirInformacoes();
         System.out.println("Taxa de Operação: R$" + taxaOperacao);
     }
+
+    public double getTaxaOperacao() {
+        return taxaOperacao;
+    }
 }
