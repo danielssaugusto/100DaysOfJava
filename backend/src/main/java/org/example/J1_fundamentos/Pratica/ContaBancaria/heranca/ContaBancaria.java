@@ -1,6 +1,6 @@
 package org.example.J1_fundamentos.Pratica.ContaBancaria.heranca;
 
-public class ContaBancaria {
+public abstract class ContaBancaria {
     private String titular;
     private double saldo;
 
@@ -9,7 +9,7 @@ public class ContaBancaria {
         this.saldo = saldoInicial;
     }
 
-    public void depositar(double valor) {
+    protected void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
             System.out.println("Depósito de R$" + valor + " realizado.");
@@ -18,13 +18,17 @@ public class ContaBancaria {
         }
     }
 
-    public void sacar(double valor) {
+    protected void sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
             saldo -= valor;
             System.out.println("Saque de R$" + valor + " realizado.");
         } else {
             System.out.println("Saldo insuficiente ou valor inválido.");
         }
+    }
+
+    protected void ajustarSaldo(double novoSaldo) {
+        this.saldo = novoSaldo;
     }
 
     public String getTitular() {

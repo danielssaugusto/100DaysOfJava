@@ -11,7 +11,7 @@ public class ContaCorrente extends ContaBancaria {
     };
 
     @Override
-    public void sacar(double valor) {
+    protected void sacar(double valor) {
         double valorTotal = valor + taxaOperacao;
 
         if (valorTotal > 0 && valorTotal <= getSaldo()) {
@@ -27,5 +27,9 @@ public class ContaCorrente extends ContaBancaria {
     public void exibirInformacoes() {
         super.exibirInformacoes();
         System.out.println("Taxa de Operação: R$" + taxaOperacao);
+    }
+
+    public double getTaxaOperacao() {
+        return taxaOperacao;
     }
 }
