@@ -9,7 +9,7 @@ public abstract class ContaBancaria {
         this.saldo = saldoInicial;
     }
 
-    protected void depositar(double valor) {
+    public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
             System.out.println("Depósito de R$" + valor + " realizado.");
