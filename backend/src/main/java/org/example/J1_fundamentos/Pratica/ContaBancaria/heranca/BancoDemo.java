@@ -5,6 +5,7 @@ public class BancoDemo {
         // DemoBancario1();
         // DemoBancario2();
         OperacaoBancaria op = new OperacaoBancaria(OperacaoBancaria.OP_SAQUE, 500.0);
+
     }
 
     private static void DemoBancario2() {
