@@ -15,6 +15,17 @@ public class ContaPoupanca extends ContaBancaria {
     }
 
     @Override
+    protected void sacar(double valor) {
+        double valorTotal = valor;
+
+        if (valorTotal > 0 && valorTotal <= getSaldo()) {
+            super.sacar(valor);
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido para a conta corrente.");
+        }
+    }
+
+    @Override
     public void exibirInformacoes() {
         super.exibirInformacoes();
         System.out.println("Taxa de rendimento anual: R$" + taxaRendimentoAnual + "%");
