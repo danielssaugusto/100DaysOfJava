@@ -16,9 +16,7 @@ public class ContaPoupanca extends ContaBancaria {
 
     @Override
     protected void sacar(double valor) {
-        double valorTotal = valor;
-
-        if (valorTotal > 0 && valorTotal <= getSaldo()) {
+        if (valor > 0 && valor <= getSaldo()) {
             super.sacar(valor);
         } else {
             System.out.println("Saldo insuficiente ou valor inválido para a conta corrente.");
