@@ -1,7 +1,17 @@
 package org.example.J1_fundamentos.Fase01_FundamentosSolidos;
 
-public class OperadorTernario {
+public class E005_IfElse {
     static void main() {
+        int nota = 7;
+
+        if (nota >= 9) {
+            System.out.println("Excelente!");
+        } else if (nota >= 7) {
+            System.out.println("Aprovado.");
+        } else {
+            System.out.println("Recuperação.");
+        }
+
         // OPERADOR TERNÁRIO
         // Sintaxe do operador:
         // (Condição) ? se verdadeiro : se falso;
@@ -10,6 +20,5 @@ public class OperadorTernario {
         int idade = 18;
         String status = (idade >= 18) ? "Ok" : "Não";
         System.out.println(status);
-
     }
 }

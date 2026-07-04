@@ -1,6 +1,6 @@
 package org.example.J1_fundamentos.Fase01_FundamentosSolidos;
 
-public class E002_Metodos {
+public class E009_Metodos {
     /*
     * Sumário:
     * 1. Métodos: Parâmetros e Retorno
