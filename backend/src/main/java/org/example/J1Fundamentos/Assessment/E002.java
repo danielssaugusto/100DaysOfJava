@@ -1,15 +1,27 @@
 package org.example.J1Fundamentos.Assessment;
 
+import java.util.Scanner;
+
 public class E002 {
     static void main() {
         String name;
         String password;
 
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Enter a password: ");
+            password = sc.nextLine();
+
+        } while (!passwordValidator(password));
+
+        System.out.println("Valid password!");
+
+
     }
 
     public static boolean passwordValidator(String password) {
         if (password.length() < 8) {
-            System.out.println("Senha fraca! Sua senha não pode ter menos de oito caracteres.");
+            System.out.println("Weak password! Your password cannot be less than 8 characters long.");
             return false;
         }
 
