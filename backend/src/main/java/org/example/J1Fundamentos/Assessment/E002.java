@@ -10,6 +10,24 @@ public class E002 {
             System.out.println("Senha fraca! Sua senha não pode ter menos de oito caracteres.");
             return false;
         }
+
+        boolean isUpper = false;
+        boolean isNumber = false;
+        boolean isSpecial = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                isUpper = true;
+            }
+
+            if (Character.isDigit(c)) {
+                isNumber = true;
+            }
+
+            if (!Character.isLetterOrDigit(c)) {
+                isSpecial = true;
+            }
+        }
     }
 }
 
