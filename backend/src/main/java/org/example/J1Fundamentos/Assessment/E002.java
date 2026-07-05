@@ -1,9 +1,11 @@
 package org.example.J1Fundamentos.Assessment;
 
 public class E002 {
-    String name;
-    String password;
+    static void main() {
+        String name;
+        String password;
 
+    }
 
     public static boolean passwordValidator(String password) {
         if (password.length() < 8) {
@@ -28,14 +30,22 @@ public class E002 {
                 isSpecial = true;
             }
         }
+
+        if (!isUpper) {
+            System.out.println("The password needs a one upper char.");
+            return false;
+        }
+
+        if (!isNumber) {
+            System.out.println("The password needs a one number.");
+            return false;
+        }
+
+        if (!isSpecial) {
+            System.out.println("The password needs a one special char.");
+            return false;
+        }
+
+        return true;
     }
 }
-
-
-/*
-* Solicite ao usuário seu nome e uma senha.
-A senha deve:
-Ter no mínimo 8 caracteres.
-Conter pelo menos uma letra maiúscula, um número e um caractere especial (@, #, $, etc.).
-Caso a senha seja inválida, o programa deve informar o erro específico e solicitar uma nova tentativa.
-* */
