@@ -4,10 +4,18 @@ import java.util.Scanner;
 
 public class E002 {
     static void main() {
+        callValidator();
+    }
+
+    private static void callValidator() {
         Scanner sc = new Scanner(System.in);
 
-        String name;
+        String username;
         String password;
+
+        System.out.println("Enter your username: ");
+        username = sc.nextLine();
+        System.out.println("Username: " + username);
 
         do {
             System.out.println("Enter a password: ");
