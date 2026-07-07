@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class E002 {
     static void main() {
+        Scanner sc = new Scanner(System.in);
+
         String name;
         String password;
 
-        Scanner sc = new Scanner(System.in);
         do {
             System.out.println("Enter a password: ");
             password = sc.nextLine();
@@ -15,8 +16,6 @@ public class E002 {
         } while (!passwordValidator(password));
 
         System.out.println("Valid password!");
-
-
     }
 
     public static boolean passwordValidator(String password) {
@@ -61,3 +60,22 @@ public class E002 {
         return true;
     }
 }
+
+/*
+    String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$";
+
+    if (senha.matches(regex)) {
+            System.out.println("Senha válida!");
+    } else {
+            System.out.println("Senha inválida.");
+    }
+
+    O que significa?
+    ^                   início da String
+    (?=.*[A-Z])         pelo menos uma letra maiúscula
+    (?=.*\d)            pelo menos um número
+    (?=.*[@#$%^&+=!])   pelo menos um caractere especial
+    .{8,}               mínimo de 8 caracteres
+    $                   fim da String
+
+ */
