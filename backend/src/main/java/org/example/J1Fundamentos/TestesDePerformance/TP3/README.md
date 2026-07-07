@@ -1,4 +1,4 @@
-git pull# Teste de Performance 3 (TP3) - Fundamentos de Desenvolvimento com Java
+# Teste de Performance 3 (TP3) - Fundamentos de Desenvolvimento com Java
 
 Este repositório contém a resolução dos exercícios propostos para o Teste de Performance 3 (TP3) da disciplina de **Fundamentos de Desenvolvimento com Java**. O objetivo deste trabalho é praticar e consolidar os conceitos de Programação Orientada a Objetos (POO), como classes, objetos, atributos, métodos, encapsulamento (getters/setters) e construtores.
 
