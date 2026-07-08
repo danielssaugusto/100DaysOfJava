@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class J002_TryCatch {
+public class J001_TryCatch {
     static void main() {
         Scanner sc = new Scanner(System.in);
 
