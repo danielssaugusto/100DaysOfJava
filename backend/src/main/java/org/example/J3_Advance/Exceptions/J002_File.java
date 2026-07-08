@@ -3,6 +3,7 @@ package org.example.J3_Advance.Exceptions;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 public class J002_File {
@@ -27,11 +28,14 @@ public class J002_File {
         switch (option) {
             case 1 -> createFile();
             case 2 -> deleteFile();
+            case 3 -> copyFile();
+            case 4 -> moveFile();
             case 0 -> System.out.println("Quit...");
 
             default -> System.out.println("Invalid option!");
         } while (option != 0);
     }
+
 
     private static void createFile() throws IOException {
         System.out.println("File's name to create: ");
@@ -52,5 +56,29 @@ public class J002_File {
         } else {
             System.out.println("File not found.");
         }
+    }
+
+    private static void copyFile() throws IOException {
+        System.out.println("File's name to copy: ");
+        Path origin = Path.of(scanner.nextLine());
+        System.out.println("Destination file: ");
+        Path destination = Path.of(scanner.nextLine());
+
+        if (Files.exists(origin)) {
+            Files.copy(origin, destination, StandardCopyOption.COPY_ATTRIBUTES);
+            System.out.println("Successfully moved/renamed!");
+        } else {
+            System.out.println("File not found.");
+        }
+    }
+
+    private static void moveFile() throws IOException {
+        System.out.println("File's name to copy: ");
+        Path origin = Path.of(scanner.nextLine());
+        System.out.println("Destination file: ");
+        Path destination = Path.of(scanner.nextLine());
+
+        Files.move(origin, destination, StandardCopyOption.COPY_ATTRIBUTES);
+        System.out.println("Files successfully moved!");
     }
 }
