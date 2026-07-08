@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.FileTime;
 import java.util.List;
 import java.util.Scanner;
@@ -16,33 +17,34 @@ public class J002_File {
     static void main() throws IOException {
         int option;
 
-        System.out.println("""
-                === Menu: Manipulation File ===
-                1. Create file.
-                2. Delete file
-                3. Copy file
-                4. Move file.
-                5. Display file's info.
-                6. Read line by line's file.
-                7. Write inside file.
-                0. Quit.
-                Enter a option: """);
-        option = Integer.parseInt(scanner.nextLine());
+        do {
+            System.out.println("""
+                    === Menu: Manipulation File ===
+                    1. Create file.
+                    2. Delete file
+                    3. Copy file
+                    4. Move file.
+                    5. Display file's info.
+                    6. Read line by line's file.
+                    7. Write inside file.
+                    0. Quit.
+                    Enter a option:
+                    """);
+            option = Integer.parseInt(scanner.nextLine());
 
-        switch (option) {
-            case 1 -> createFile();
-            case 2 -> deleteFile();
-            case 3 -> copyFile();
-            case 4 -> moveFile();
-            case 5 -> displayInfo();
-            case 6 -> readFile();
-            case 7 -> writeFile();
-            case 0 -> System.out.println("Quit...");
-
-            default -> System.out.println("Invalid option!");
+            switch (option) {
+                case 1 -> createFile();
+                case 2 -> deleteFile();
+                case 3 -> copyFile();
+                case 4 -> moveFile();
+                case 5 -> displayInfo();
+                case 6 -> readFile();
+                case 7 -> writeFile();
+                case 0 -> System.out.println("Quit...");
+                default -> System.out.println("Invalid option!");
+            }
         } while (option != 0);
     }
-
 
     private static void createFile() throws IOException {
         System.out.println("File's name to create: ");
@@ -121,7 +123,9 @@ public class J002_File {
             builder.append(line).append("\n");
         }
 
-        Files.writeString(file, builder.toString(), StandardCharsets.UTF_8);
+        Files.writeString(file, builder.toString(), StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE,
+                StandardOpenOption.APPEND);
         System.out.println("File saved to " + file.toAbsolutePath());
     }
 
