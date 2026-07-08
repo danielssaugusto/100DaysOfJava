@@ -19,16 +19,6 @@ public class J002_File {
 
         do {
             System.out.println("""
-                === Menu: Manipulation File ===
-                1. Create file.
-                2. Delete file
-                3. Copy file
-                4. Move file.
-                5. Display file's info.
-                6. Read line by line's file.
-                7. Write inside file.
-                0. Quit.
-                Enter a option: """);
             option = Integer.parseInt(scanner.nextLine());
 
             switch (option) {
@@ -40,12 +30,10 @@ public class J002_File {
                 case 6 -> readFile();
                 case 7 -> writeFile();
                 case 0 -> System.out.println("Quit...");
-
                 default -> System.out.println("Invalid option!");
             }
         } while (option != 0);
     }
-
 
     private static void createFile() throws IOException {
         System.out.println("File's name to create: ");
