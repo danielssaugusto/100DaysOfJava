@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.FileTime;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class J002_File {
     private static final Scanner scanner = new Scanner(System.in);
@@ -30,12 +32,12 @@ public class J002_File {
             case 2 -> deleteFile();
             case 3 -> copyFile();
             case 4 -> moveFile();
+            case 5 -> displayInfo();
             case 0 -> System.out.println("Quit...");
 
             default -> System.out.println("Invalid option!");
         } while (option != 0);
     }
-
 
     private static void createFile() throws IOException {
         System.out.println("File's name to create: ");
@@ -66,7 +68,7 @@ public class J002_File {
 
         if (Files.exists(origin)) {
             Files.copy(origin, destination, StandardCopyOption.COPY_ATTRIBUTES);
-            System.out.println("Successfully moved/renamed!");
+            System.out.println("Successfully copied!");
         } else {
             System.out.println("File not found.");
         }
@@ -78,7 +80,26 @@ public class J002_File {
         System.out.println("Destination file: ");
         Path destination = Path.of(scanner.nextLine());
 
-        Files.move(origin, destination, StandardCopyOption.COPY_ATTRIBUTES);
-        System.out.println("Files successfully moved!");
+        Files.move(origin, destination, StandardCopyOption.ATOMIC_MOVE);
+        System.out.println("Files successfully moved/renamed!");
+    }
+
+    private static void displayInfo() throws IOException {
+        System.out.println("File's name to display: ");
+        Path file = Path.of(scanner.nextLine());
+
+        if (Files.exists(file)) {
+            System.out.println("Size: " + Files.size(file));
+
+            FileTime fTime = Files.getLastModifiedTime(file);
+            System.out.println("Last modified: " + fTime.to(TimeUnit.HOURS));
+
+            System.out.println("Is directory? " + Files.isDirectory(file));
+
+            var attrs = Files.readAttributes(file, "*");
+            System.out.println("Full attributes: " + attrs);
+        } else {
+            System.out.println("File not found.");
+        }
     }
 }
