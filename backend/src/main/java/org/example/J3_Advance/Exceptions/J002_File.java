@@ -26,6 +26,7 @@ public class J002_File {
 
         switch (option) {
             case 1 -> createFile();
+            case 2 -> deleteFile();
             case 0 -> System.out.println("Quit...");
 
             default -> System.out.println("Invalid option!");
@@ -38,5 +39,18 @@ public class J002_File {
 
         Files.createFile(file);
         System.out.println("File created: " + file.toAbsolutePath());
+    }
+
+
+    private static void deleteFile() throws IOException {
+        System.out.println("File's name to delete: ");
+        Path file = Path.of(scanner.nextLine());
+
+        if (Files.exists(file)) {
+            Files.delete(file);
+            System.out.println("Deleted file: " + file);
+        } else {
+            System.out.println("File not found.");
+        }
     }
 }
