@@ -19,6 +19,7 @@ public class J002_File {
 
         do {
             System.out.println("""
+<<<<<<< HEAD
                 === Menu: Manipulation File ===
                 1. Create file.
                 2. Delete file
@@ -29,6 +30,8 @@ public class J002_File {
                 7. Write inside file.
                 0. Quit.
                 Enter a option: """);
+=======
+>>>>>>> ace114187b6a2e96b93f7ac50573693758c0aca6
             option = Integer.parseInt(scanner.nextLine());
 
             switch (option) {
@@ -40,7 +43,10 @@ public class J002_File {
                 case 6 -> readFile();
                 case 7 -> writeFile();
                 case 0 -> System.out.println("Quit...");
+<<<<<<< HEAD
 
+=======
+>>>>>>> ace114187b6a2e96b93f7ac50573693758c0aca6
                 default -> System.out.println("Invalid option!");
             }
         } while (option != 0);
